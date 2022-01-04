@@ -1,17 +1,13 @@
-// import { useState } from "react";
+ import { useState } from "react";
 
 export default function App(){
-  return ( <div className="containar-fluid" >
+  const cards = [1,1,1,1,1,1,1,1];
+  return ( <div className="containar-fluid mt-2" >
     <Heading/>
-    <div className="row">
-      <CardD className="col-sm-12 col-md-4" />
-      <CardD className="col-sm-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
-      <CardD className="col-4 col-md-4" />
+    <div className="row mt-5">
+      {cards.map(() => <div className="col-3 mb-2">
+        <CardD/>
+      </div>)}
     </div>
   </div>
   );
@@ -23,9 +19,14 @@ function Heading(){
   </div>
 }
 function CardD(){
+
   return <div className="card">
         <div className="card-header" > Title </div>
-        <div className="card-body"> <img src="https://picsum.photos/200"/> </div>
+        <div className="card-body"> <img src="https://picsum.photos/270/300"/> 
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione nulla
+        earum, iure magnam at assumenda qui et itaque, modi totam mollitia
+        officia necessitatibus tenetur architecto.
+        </div>
         <div className="card-footer"> <input type="button"   value="Buy Now"/> </div>
     </div>;
 
