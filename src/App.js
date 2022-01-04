@@ -37,6 +37,7 @@ function MyComponent() {
         className="btn btn-danger btn-sm"
         onClick={dangerTheme}
       />
+      
       {list.map(() => (
         <div className={cardCss}>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur,
