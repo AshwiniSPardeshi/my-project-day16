@@ -1,60 +1,38 @@
-// import { useState } from "react";
-
 import { useState } from "react";
 
-export default function App(){
-  return ( <div className="containar-fluid" >
-    <Heading/>
-    <div className="row">
-      <div className="col-4 col-sm-12"> 
-        <CardD/>        
-      </div>
-    </div>
-  </div>
+export default function App() {
+  return (
+    <>
+      <MyComponent />
+    </>
   );
 }
 
-function Heading(){
-  return <div>
-    <h1>Card Samples</h1>
-  </div>
-}
+function MyComponent() {
+  let list = [1,1];
+  let [msg, setMsg] = useState("Hellooo");
 
-function CardD(){
-  const list = [1,1,1,1,1,1,1];
-  const [title, setTitle] = useState("");
-
-  const Click = () => {
-    return;
+  const changeMessage = (e) => {
+    setMsg(e.target.value);
   };
-  
-  const typeTitle = (e) => {
-    setTitle(e.target.value);
-  }; 
 
-  return <div className="container-fluid bg-info">
-    <div>    
-      <input className="m-2 " type="text" value={title} placeholder="Enter Title..."  onChange={typeTitle} />
-    </div>
+  return (
     <div>
-      <input className="m-2 " type="button" value="Click" onClick={Click} />
+      <h1>Counter Application</h1>
+      <div><input
+        type="text"
+        name=""
+        id=""
+        value={msg}
+        onChange={changeMessage}
+      /></div>
+
+      {list.map( (msg) => <div>{msg}</div>) }
+
+      <div>{msg}</div>
+      <div>{msg}</div>
+      <div>{msg}</div>
+
     </div>
-    <div>{title}</div>
-    
-    {list.map( (item) =>     <div className="card">
-        <div className="card-header" > {title} </div>
-        <div className="card-body"> <img src="https://picsum.photos/200"/> </div>
-        <div className="card-footer"> <input type="button"   value="Buy Now"/> </div>
-    </div> ) }
-
-  </div>
-
-    /*
-    <div className="card">
-        <div className="card-header" > {Title} </div>
-        <div className="card-body"> <img src="https://picsum.photos/200"/> </div>
-        <div className="card-footer"> <input type="button"   value="Buy Now"/> </div>
-    </div>;
-    */
-
+  );
 }
